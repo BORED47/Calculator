@@ -1,1 +1,13 @@
-console.log('Happy developing ✨')
+function solve() {
+    if(){
+
+    }else if(){
+
+    }
+}
+
+function clear(){
+
+}
+
+
