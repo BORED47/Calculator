@@ -7,42 +7,47 @@
     <script src="index.js"></script>
 </head>
 
-<body>
+<body onload="equStorage()">
 <div class="calc">
     <div class="screen">
         <input type="text" id="input">
         <p id="output">  </p>
     </div>
 
-    <div>
+    <div class="buttons">
         <div class="nums">
-            <p> 7 </p>
-            <p> 8 </p>
-            <p> 9 </p>
+            <p onclick="textInput()"> 7 </p>
+            <p onclick="textInput()"> 8 </p>
+            <p onclick="textInput()"> 9 </p>
 
-            <p> 4 </p>
-            <p> 5 </p>
-            <p> 6 </p>
+            <p onclick="textInput()"> 4 </p>
+            <p onclick="textInput()"> 5 </p>
+            <p onclick="textInput()"> 6 </p>
 
-            <p> 1 </p>
-            <p> 2 </p>
-            <p> 3 </p>
+            <p onclick="textInput()"> 1 </p>
+            <p onclick="textInput()"> 2 </p>
+            <p onclick="textInput()"> 3 </p>
 
-            <p> C </p>
-            <p> 0 </p>
-            <p> dec(.) </p>
+            <p onclick="clear()"> C </p>
+            <p onclick="textInput()"> 0 </p>
+            <p onclick="textInput()"> dec(.) </p>
         </div>
 
         <div id="symbols">
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
-            <p>  </p>
+            <p onclick="textInput()"> + </p>
+            <p onclick="textInput()"> - </p>
+            <p onclick="textInput()"> * </p>
+
+            <p onclick="textInput()"> ÷ </p>
+            <p onclick="textInput()"> ( </p>
+            <p onclick="textInput()"> ) </p>
+
+            <p onclick="textInput()"> ** </p>
+            <p onclick="checking_Storage()"> ↑ </p>
+            <p onclick="checking_Storage()"> ↓ </p>
+
+            <p onclick="solve()"> = </p>
+            <p onclick="textInput()"> % </p>
         </div>
     </div>
 </div>
