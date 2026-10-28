@@ -1,15 +1,19 @@
-let input = document.getElementById("");
 function solve() {
-    let ans = document.getElementsByClassName("#output");
-    const equation = document.getElementById("#input").toString();
-    ans = eval(equation.value);
+    const input = document.getElementById("input");
+    let output = document.getElementById("output");
+    let ans = eval(input.value);
+    output.innerText = ans;
 }
 
-function textInput(){
-
+function textInput(text){
+    let input = document.getElementById("input");
+    input.value += text;
 }
-function clear(){
-
+function clearing(){
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
+    input.value = "";
+    output.innerText = "";
 }
 
 function checking_Storage(){
@@ -17,12 +21,12 @@ function checking_Storage(){
 }
 
 function equStorage(){
-    const stored = sessionStorage.getItem("#output");
+    const stored = sessionStorage.getItem("output");
     if(stored){
        let equations = JSON.parse(stored);
     }
     else{
         equations = [];
-        sessionStorage.setItem("#output", equations);
+        sessionStorage.setItem("output", equations);
     }
 }
