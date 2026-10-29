@@ -26,7 +26,7 @@ function equStorage(){
        let equations = JSON.parse(stored);
     }
     else{
-        equations = [];
+        let equations = [];
         sessionStorage.setItem("output", equations);
     }
 }
