@@ -1,11 +1,10 @@
 function solve() {
     const input = document.getElementById("input");
     let output = document.getElementById("output");
-    let ans = eval(input.value);
-    output.innerText = ans;
+    output.innerText = eval(input.value);
 
-    sessionStorage.setItem("input", JSON.stringify(output));
     equations.push(input.value);
+    sessionStorage.setItem("C", JSON.stringify(equations));
 }
 
 function textInput(text){
@@ -20,32 +19,47 @@ function clearing(){
     sessionStorage.clear();
 }
 
+let p = 0;
 function checking_StorageUp(){
     let input = document.getElementById("input");
     let output = document.getElementById("output");
+    output.innerText = "";
+    if(input.value === equations[p]){
+        p--;
+        if(p < 0){
+            p = 0;
+        }
+    }else {
+        p = equations.length - 1;
+    }
+    input.value = equations[p];
 
-    input.value = JSON.parse(sessionStorage.getItem(""));
-    output.innerText = JSON.parse(sessionStorage.getItem(""));
 }
 function checking_StorageDown(){
     let input = document.getElementById("input");
     let output = document.getElementById("output");
-
-    input.value = JSON.parse(sessionStorage.getItem(""));
-    output.innerText = JSON.parse(sessionStorage.getItem(""));
-
+    output.innerText = "";
+    if(input.value === equations[p]){
+        p++;
+        if(p > equations.length - 1){
+            p = equations.length - 1;
+        }
+    }else {
+        p = equations.length - 1;
+    }
+    input.value = equations[p];
 }
 
 
-let equations = [CSSMathMax];
+let equations = [];
 
 function equStorage(){
-    const stored = sessionStorage.getItem("equations");
+    const stored = sessionStorage.getItem("C");
     if(stored){
        equations = JSON.parse(stored);
     }
     else{
         let equations = [];
-        sessionStorage.setItem("", equations);
+        sessionStorage.setItem("C", JSON.stringify(equations));
     }
 }
